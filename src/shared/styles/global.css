@@ -1,0 +1,471 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/inter/700.css';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme static {
+  --color-*: initial;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --breakpoint-sm: 33.75rem;
+  --breakpoint-md: 47.5rem;
+  --breakpoint-lg: 68.75rem;
+  --breakpoint-xl: 87.5rem;
+  --color-canvas: #f4f6fa;
+  --color-ink: #20232b;
+  --color-subtle: #626879;
+  --color-faint: #818394;
+  --color-line: #dce0eb;
+  --color-accent-ink: #695197;
+  --color-focus: #654b9e;
+  --color-surface: #ffffffb8;
+  --color-surface-strong: #fffffff5;
+  --color-glass: #ffffffdf;
+  --color-border: #ffffff;
+  --color-primary: #30313f;
+  --color-primary-foreground: #ffffff;
+  --color-primary-hover: #4b405f;
+  --color-action: #513b83;
+  --color-action-foreground: #ffffff;
+  --color-control: #ffffffd9;
+  --color-control-solid: #ffffff;
+  --color-control-border: #d9dce6;
+  --color-input-border: #aaa8bb;
+  --color-input-ink: #252035;
+  --color-placeholder: #777b8b;
+  --color-chip: #ffffffa8;
+  --color-chip-hover: #e5ddf6;
+  --color-selected: #37313f;
+  --color-selected-foreground: #ffffff;
+  --color-sidebar: #ffffff8c;
+  --color-nav-hover: #ebe7f5;
+  --color-nav-ink: #503d77;
+  --color-header: #f7f8fcba;
+  --color-header-line: #ffffffc9;
+  --color-notice-dot: #8e70c8;
+  --color-avatar-ink: #574469;
+  --color-brand-dot: #9276d5;
+  --color-counter: #eee8fa;
+  --color-counter-foreground: #20232b;
+  --color-art: #f1f3f8;
+  --color-metric-ink: #53566a;
+  --color-icon-surface: #ffffff90;
+  --color-icon-ink: #75628f;
+  --color-track: #ffffff8f;
+  --color-chart-ink: #57526d;
+  --color-donut-hole: #f7f9fc;
+  --color-table-line: #e5e4ed;
+  --color-success: #5d796b;
+  --color-danger: #9f1730;
+  --color-summary-border: #d5cfdf;
+  --color-form: #ffffffbd;
+  --color-flower-ink: #a48cc7;
+  --color-selection: #dfd5ff;
+  --color-swatch-border: #30303a30;
+  --color-chart-highlight: #ffffff50;
+  --color-chart-empty: #e6e4ed;
+  --color-chart-1: #a994ed;
+  --color-chart-2: #80c7d8;
+  --color-chart-3: #e9a5ca;
+  --color-chart-4: #9ac5aa;
+  --color-chart-5: #e6b79d;
+  --color-overlay: #25203459;
+  --color-swatch-brown: #75482f;
+  --color-swatch-black: #222323;
+  --color-swatch-tan: #c4925d;
+  --color-swatch-sage: #939d81;
+  --color-swatch-sand: #cbb797;
+  --color-swatch-terracotta: #b85f42;
+  --color-swatch-cream: #efe5ce;
+  --color-swatch-white: #ffffff;
+  --color-swatch-red: #b52032;
+  --color-swatch-blue: #255cb7;
+  --color-swatch-oat: #d2c3aa;
+  --color-swatch-rose: #c7828d;
+  --color-swatch-charcoal: #515252;
+  --color-swatch-olive: #626c43;
+  --color-swatch-navy: #293b54;
+  --color-swatch-natural: #e5d9bc;
+  --background-image-ambient:
+    radial-gradient(ellipse at 18% 25%, #b8a5ff42, transparent 45%),
+    radial-gradient(ellipse at 85% 20%, #9ae9ff45, transparent 45%),
+    radial-gradient(ellipse at 65% 80%, #f7a8e82b, transparent 50%);
+  --background-image-brand: linear-gradient(140deg, #d0c1ff, #f6d3ea, #c4eff5);
+  --background-image-nav-active: linear-gradient(115deg, #e4dafd, #f0e9fb);
+  --background-image-avatar: linear-gradient(135deg, #d2c5fb, #f3d9df, #cfe9ea);
+  --background-image-registration:
+    radial-gradient(ellipse at 5% 0%, #b8a5ff60, transparent 60%),
+    radial-gradient(ellipse at 90% 100%, #9ae9ff55, transparent 65%),
+    linear-gradient(#ffffff80, #ffffff80);
+  --background-image-metric-glow:
+    radial-gradient(ellipse at 70% 30%, #b8a5ff45, transparent 50%),
+    radial-gradient(ellipse at 25% 80%, #9ae9ff30, transparent 50%);
+  --background-image-metric-pink: radial-gradient(
+    ellipse,
+    #f7a8e83d,
+    transparent 60%
+  );
+  --background-image-metric-cyan: radial-gradient(
+    ellipse,
+    #9ae9ff55,
+    transparent 60%
+  );
+  --background-image-metric-mint: radial-gradient(
+    ellipse,
+    #b7e9c755,
+    transparent 60%
+  );
+  --background-image-value-panel:
+    radial-gradient(ellipse at 80% 0%, #ddd4ff85, transparent 65%),
+    linear-gradient(145deg, #ffffffc9, #f7e5f54f);
+  --background-image-mix-panel:
+    radial-gradient(ellipse at 100% 0%, #b7e9c752, transparent 65%),
+    linear-gradient(#ffffffa6, #ffffffa6);
+  --background-image-swatch-silver: linear-gradient(
+    135deg,
+    #8c9397,
+    #eff0f1 48%,
+    #969da1
+  );
+  --background-image-swatch-gold: linear-gradient(
+    135deg,
+    #ac8032,
+    #f3d889 48%,
+    #bc913f
+  );
+  --background-image-swatch-tortoiseshell:
+    radial-gradient(ellipse at 30% 30%, #37251b 0 18%, transparent 22%),
+    radial-gradient(ellipse at 75% 70%, #4a2d1d 0 20%, transparent 25%),
+    linear-gradient(#ab7134, #ab7134);
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-input: 8px;
+  --radius-icon: 10px;
+  --radius-control: 11px;
+  --radius-button: 12px;
+  --radius-toast: 14px;
+  --radius-item: 15px;
+  --radius-thumb: 16px;
+  --radius-panel: 18px;
+  --radius-photo: 19px;
+  --radius-detail: 20px;
+  --radius-form: 22px;
+  --radius-card: 26px;
+  --radius-modal: 28px;
+  --radius-section: 30px;
+  --text-micro: 8px;
+  --text-tiny: 9px;
+  --text-caption: 10px;
+  --text-label: 11px;
+  --text-body: 12px;
+  --text-product: 13px;
+  --text-heading: 15px;
+  --text-field: 16px;
+  --text-hero-icon: 17px;
+  --text-metric-icon: 18px;
+  --text-logo-compact: 19px;
+  --text-chart-title: 20px;
+  --text-logo-desktop: 22px;
+  --text-logo: 23px;
+  --text-price: 28px;
+  --text-registration: 35px;
+  --text-number: 36px;
+  --text-value: 44px;
+  --text-flower: 80px;
+  --text-display: clamp(29px, 3.5vw, 43px);
+  --text-section: clamp(23px, 2.4vw, 30px);
+  --text-catalog-title: clamp(23px, 2.5vw, 29px);
+  --text-stat: clamp(29px, 3.4vw, 38px);
+  --shadow-surface: 0 8px 30px #35325407, inset 0 1px 0 #fff;
+  --shadow-inset-light: inset 0 1px 2px #fff;
+  --shadow-action: 0 6px 20px #51426f20;
+  --shadow-modal: 0 28px 100px #39304d30;
+  --shadow-toast: 0 8px 25px #20232b25;
+  --shadow-card-hover: 0 14px 35px #3d315616;
+  --shadow-swatch: 0 0 0 5px #b8a5ff30;
+  --shadow-donut: 0 10px 28px #69558c0d;
+  --shadow-donut-inset: inset 0 2px 10px #3e31500a;
+
+  --color-background: var(--color-canvas);
+  --color-foreground: var(--color-ink);
+  --color-muted: var(--color-chip);
+  --color-muted-foreground: var(--color-subtle);
+  --color-card: var(--color-surface);
+  --color-card-foreground: var(--color-ink);
+  --color-ring: var(--color-focus);
+  --color-input: var(--color-control-border);
+  --color-destructive: var(--color-danger);
+  --animate-ambient-drift: ambient-drift 18s ease-in-out infinite alternate;
+  --animate-enter: enter 0.6s both;
+  --animate-metric-enter: enter 0.65s both;
+  --animate-panel-enter: enter 0.8s both;
+  --animate-liquid-light: liquid-light 11s ease-in-out infinite alternate;
+  --animate-fill-in: fill-in 1.2s cubic-bezier(0.2, 0.7, 0.3, 1) both;
+  --animate-donut-in: donut-in 1.2s both;
+  --animate-bloom: bloom 24s linear infinite;
+  @keyframes ambient-drift {
+    from {
+      transform: translate(-2%, -1%) rotate(-3deg);
+    }
+    to {
+      transform: translate(3%, 3%) rotate(5deg) scale(1.08);
+    }
+  }
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  @keyframes liquid-light {
+    from {
+      transform: translate(-8%, -5%) rotate(-12deg);
+    }
+    to {
+      transform: translate(15%, 10%) rotate(25deg);
+    }
+  }
+  @keyframes fill-in {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+  @keyframes donut-in {
+    from {
+      opacity: 0;
+      transform: rotate(-25deg) scale(0.93);
+    }
+    to {
+      opacity: 1;
+      transform: rotate(0) scale(1);
+    }
+  }
+  @keyframes bloom {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
+:root:has([data-theme='dark']),
+.dark {
+  color-scheme: dark;
+  --color-canvas: #11151f;
+  --color-ink: #edf0f7;
+  --color-subtle: #b6bfd3;
+  --color-faint: #a8b2cb;
+  --color-line: #3b455c;
+  --color-accent-ink: #c9b6f4;
+  --color-focus: #cbb4ff;
+  --color-surface: #252c3cc7;
+  --color-surface-strong: #202737fa;
+  --color-glass: #7383aa50;
+  --color-border: #65749855;
+  --color-primary: #d7c6fb;
+  --color-primary-foreground: #211b32;
+  --color-primary-hover: #ebddff;
+  --color-action: #c4acef;
+  --color-action-foreground: #211b32;
+  --color-control: #191f2de8;
+  --color-control-solid: #20283a;
+  --color-control-border: #56627d;
+  --color-input-border: #68748d;
+  --color-input-ink: #edf0f7;
+  --color-placeholder: #a6b1c9;
+  --color-chip: #2b3345b8;
+  --color-chip-hover: #3b405a;
+  --color-selected: #c5b0ee;
+  --color-selected-foreground: #1e192a;
+  --color-sidebar: #1b2231d9;
+  --color-nav-hover: #34364e;
+  --color-nav-ink: #e5d8ff;
+  --color-header: #191f2ddd;
+  --color-header-line: #59668066;
+  --color-notice-dot: #cbb0fa;
+  --color-avatar-ink: #e1d7ef;
+  --color-brand-dot: #c6a8fa;
+  --color-counter: #514361;
+  --color-counter-foreground: #f4eaff;
+  --color-art: #242c3b;
+  --color-metric-ink: #c4cce0;
+  --color-icon-surface: #5d527c45;
+  --color-icon-ink: #d0bff1;
+  --color-track: #59627b40;
+  --color-chart-ink: #bfc7db;
+  --color-donut-hole: #1c2432;
+  --color-table-line: #3b455b;
+  --color-success: #a8d5be;
+  --color-danger: #ffadc0;
+  --color-summary-border: #56617a;
+  --color-form: #252e40cc;
+  --color-flower-ink: #c3a6ed;
+  --color-selection: #57446f;
+  --color-swatch-border: #a6b3cd77;
+  --color-chart-highlight: #ffffff15;
+  --color-chart-empty: #3a455a;
+  --color-chart-1: #b8a1f5;
+  --color-chart-2: #7fd0e4;
+  --color-chart-3: #e7afd2;
+  --color-chart-4: #98d7b4;
+  --color-chart-5: #efc5aa;
+  --color-overlay: #00000080;
+  --background-image-ambient:
+    radial-gradient(ellipse at 18% 25%, #71539e30, transparent 45%),
+    radial-gradient(ellipse at 85% 20%, #36728630, transparent 45%),
+    radial-gradient(ellipse at 65% 80%, #8a477025, transparent 50%);
+  --background-image-brand: linear-gradient(140deg, #5b477e, #66455c, #325c66);
+  --background-image-nav-active: linear-gradient(115deg, #423658, #30354d);
+  --background-image-avatar: linear-gradient(135deg, #54466e, #664e64, #3f626b);
+  --background-image-registration:
+    radial-gradient(ellipse at 5% 0%, #8d6ecf38, transparent 60%),
+    radial-gradient(ellipse at 90% 100%, #41869a30, transparent 65%),
+    linear-gradient(#202838cc, #202838cc);
+  --background-image-metric-glow:
+    radial-gradient(ellipse at 70% 30%, #9d7cdb25, transparent 50%),
+    radial-gradient(ellipse at 25% 80%, #51a0b520, transparent 50%);
+  --background-image-metric-pink: radial-gradient(
+    ellipse,
+    #d37cae20,
+    transparent 60%
+  );
+  --background-image-metric-cyan: radial-gradient(
+    ellipse,
+    #67c2d825,
+    transparent 60%
+  );
+  --background-image-metric-mint: radial-gradient(
+    ellipse,
+    #70b28c25,
+    transparent 60%
+  );
+  --background-image-value-panel:
+    radial-gradient(ellipse at 80% 0%, #7b5aad38, transparent 65%),
+    linear-gradient(145deg, #222b3ce6, #3a28494f);
+  --background-image-mix-panel:
+    radial-gradient(ellipse at 100% 0%, #60957530, transparent 65%),
+    linear-gradient(#202a3be0, #202a3be0);
+  --shadow-surface: 0 8px 30px #00000020, inset 0 1px 0 #ffffff08;
+  --shadow-inset-light: inset 0 1px 2px #ffffff18;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  html {
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    line-height: 1.6;
+    color-scheme: light;
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+  }
+  body {
+    margin: 0;
+    min-width: 320px;
+    isolation: isolate;
+    color: var(--color-ink);
+    background: var(--color-canvas);
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  button,
+  input,
+  select,
+  textarea {
+    font: inherit;
+    color: inherit;
+  }
+  button,
+  a,
+  input,
+  select {
+    -webkit-tap-highlight-color: transparent;
+  }
+  button {
+    cursor: pointer;
+    min-height: 44px;
+  }
+  button:disabled {
+    cursor: default;
+    opacity: 0.5;
+  }
+  :where(
+    a,
+    button,
+    input,
+    select,
+    textarea,
+    summary,
+    [tabindex]
+  ):focus-visible {
+    outline: 3px solid var(--color-focus);
+    outline-offset: 4px;
+  }
+  ::selection {
+    background: var(--color-selection);
+  }
+  h1,
+  h2,
+  h3,
+  p {
+    margin-top: 0;
+  }
+  h1,
+  h2,
+  h3 {
+    line-height: 1.2;
+    letter-spacing: -0.04em;
+  }
+  h1 {
+    font-size: var(--text-display);
+    margin-bottom: 13px;
+    font-weight: 600;
+  }
+  h2 {
+    font-size: var(--text-section);
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  h3 {
+    font-size: var(--text-heading);
+    font-weight: 600;
+    margin-bottom: 0;
+  }
+  em {
+    color: var(--color-accent-ink);
+    font-style: normal;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Component layout must not override native hidden state. */
+  [hidden] {
+    display: none;
+  }
+
+  /* Dynamic product and table text must remain readable on narrow screens. */
+  h1,
+  h2,
+  h3,
+  p {
+    overflow-wrap: anywhere;
+  }
+}
